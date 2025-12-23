@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function NavBar() {
   return (
     <header className="fixed top-0 z-50 w-full h-16 px-[8%] flex items-center justify-between bg-slate-950/60 backdrop-blur-md">
       <div className="text-lg font-semibold text-slate-200">

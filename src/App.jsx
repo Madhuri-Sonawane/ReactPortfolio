@@ -1,12 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar.jsx";
 import Hero from "./sections/Hero";
-import About from "./sections/About";
 import AboutPage from "./pages/AboutPage";
 import Skills from "./sections/Skills";
 import ExperiencePage from "./pages/ExperiencePage";
 import ContactPage from "./pages/ContactPage";
-import Contact from "./sections/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import CustomCursor from "./components/CustomCursor";
 
@@ -14,7 +12,7 @@ function App() {
   return (
     <>
       <CustomCursor />
-      <Navbar />
+      <NavBar />
 
       <Routes>
         <Route
