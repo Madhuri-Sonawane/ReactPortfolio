@@ -1,77 +1,86 @@
-import AnimatedCounter from "../components/AnimatedCounter"
-import Button from "../components/Button"
-import HeroExperience from "../components/hero_models/HeroExperience"
-import { words } from "../constants"
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-const Hero = () => {
-     useGSAP(() => {
-    gsap.fromTo(
-      ".hero-text h1",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
-    );
-  });
+export default function Hero() {
+  const heroRef = useRef(null);
+  const textRef = useRef(null);
+  const photoRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    tl.from(heroRef.current, { opacity: 0, duration: 0.6 })
+      .from(
+        textRef.current.children,
+        {
+          y: 24,
+          opacity: 0,
+          stagger: 0.15,
+          duration: 0.5,
+        },
+        "-=0.3"
+      )
+      .from(
+        photoRef.current,
+        {
+          x: 40,
+          opacity: 0,
+          duration: 0.6,
+        },
+        "-=0.5"
+      );
+  }, []);
+
   return (
-    <section id='hero' className='relative overflow-hidden'> 
-    <div className='absolute top-0 left-0 z-10'>
-        <img src="/images/bg.png" alt="background" />
-         
-    </div>
-    <div className='hero-layout'>
-        {/* Left:Hero Content */}
-        <header className='flex flex-col justify-center md:w-full w-screen md:px-20 px-5'>
-            <div className='flex flex-col gap-7'>
-                <div className='hero-text'>
-                    <h1>Shaping
-                        <span className="slide">
-                            <span className="wrapper">
-                                {words.map((word)=>(
-                                    <span key={word.text} className="flex items-center md:gap-3 gap-1 pb-2">
-                                        <img 
-                                        src={word.imgPath} 
-                                        alt={word.text}
-                                        className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                                        />
-                                        <span>{word.text}</span>
+    <section
+      ref={heroRef}
+      className="min-h-screen pt-24 px-[8%] grid grid-cols-12 gap-12 items-center"
+    >
+      {/* LEFT — 40% */}
+      <div ref={textRef} className="col-span-12 lg:col-span-5">
+        <h1 className="text-6xl font-bold leading-tight text-slate-100">
+          Hi, I’m <span className="text-sky-400">Madhuri</span>
+        </h1>
 
-                                    </span>
-                                ))} 
+        <h2 className="mt-3 text-xl text-slate-300">
+          Frontend Developer (React)
+        </h2>
 
-                            </span>
+        <p className="mt-6 text-base leading-relaxed text-slate-400">
+          I build fast, clean, and scalable user interfaces using React,
+          JavaScript, and modern UI practices.
+        </p>
 
-                        </span>
-                    </h1>
+        <div className="mt-10 flex gap-4">
+          <a
+            href="/projects"
+            className="rounded-full bg-sky-400 px-7 py-3 text-sm font-medium text-slate-900 hover:-translate-y-0.5 transition"
+          >
+            View Projects
+          </a>
 
-                    <h1>into Real Projects</h1>
-                    <h1>that Deliver Results</h1> 
+          <a
+            href="/contact"
+            className="rounded-full border border-white/20 px-7 py-3 text-sm text-slate-200 hover:bg-white/5 transition"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
 
-                </div>
-                <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-                    Hi, I'm Madhuri, React Developer with a focus on performance, 
-                    <br /><span>clean UI, and seamless user experiences.s</span>
-                </p>
-                <Button
-                className="md:w-80 md:h-16 w-60 h-12"
-                id="button"
-                text="See my Work"
-                />
-
-            </div>
-        </header>
-
-        {/* Right: 3D Model */}
-        <figure>
-            <div className="hero-3d-layout">
-                <HeroExperience/>
-            </div>
-        </figure>
-
-    </div>
-  <AnimatedCounter/>
+      {/* RIGHT — 60% */}
+      <div
+        ref={photoRef}
+        className="col-span-12 lg:col-span-7 flex justify-center"
+      >
+        <img
+          src="/src/assets/profile-hero.png"
+          alt="Madhuri portrait"
+          className="w-full max-w-[520px] h-auto rounded-2xl
+                     shadow-[0_30px_80px_rgba(0,0,0,0.6)]
+                     contrast-[1.05] brightness-[0.95]"
+        />
+      </div>
     </section>
-  )
+  );
 }
-
-export default Hero

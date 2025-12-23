@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Custom background */
+html,
+body {
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 60%);
+}
+/* CUSTOM CURSOR */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.89);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out;
+  z-index: 9999;
+}
+.skill-card {
+  @apply rounded-2xl bg-slate-900/40 border border-white/5 p-6
+  shadow-[0_20px_40px_rgba(0,0,0,0.4)]
+  backdrop-blur-md
+  transition hover:-translate-y-1
+  hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)];
+}
+
+.skill-title {
+  @apply text-lg font-medium text-slate-100;
+}
+
+.skill-icons {
+  @apply mt-4 flex gap-4 text-2xl text-slate-400;
+}
+
+.skill-desc {
+  @apply mt-4 text-sm leading-relaxed text-slate-400;
+}
+.skill-pill {
+  @apply flex items-center gap-2 px-4 py-2
+  rounded-full bg-slate-900/50
+  border border-white/10
+  text-sm text-slate-300
+  backdrop-blur-md
+  transition hover:-translate-y-0.5
+  hover:border-white/20;
+}
+.about-link-card {
+  @apply rounded-xl bg-slate-900/40 p-5 text-slate-200 text-sm
+  border border-white/5 backdrop-blur-md
+  transition hover:-translate-y-1 hover:border-sky-400/40;
+}
+
+.section-title {
+  @apply text-2xl font-semibold text-slate-100;
+}
+
+.section-text {
+  @apply mt-4 text-base text-slate-400;
+}
+.contact-input {
+  @apply w-full rounded-lg bg-slate-950/60
+  border border-white/10
+  px-4 py-3 text-sm text-slate-200
+  placeholder:text-slate-500
+  focus:outline-none focus:border-sky-400/60
+  transition;
+}
