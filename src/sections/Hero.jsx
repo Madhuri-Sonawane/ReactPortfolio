@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import profileHero from "../assets/profile-hero.png";
+
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -74,7 +76,7 @@ export default function Hero() {
         className="col-span-12 lg:col-span-7 flex justify-center"
       >
         <img
-          src="/src/assets/profile-hero.png"
+          src={profileHero}
           alt="Madhuri portrait"
           className="w-full max-w-[520px] h-auto rounded-2xl
                      shadow-[0_30px_80px_rgba(0,0,0,0.6)]
