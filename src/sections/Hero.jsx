@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 import profileHero from "../assets/profile-hero.png";
 
 export default function Hero() {
@@ -64,19 +65,20 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex gap-4">
-          <a
-            href="/projects"
-            className="rounded-full bg-sky-400 px-7 py-3 text-sm font-medium text-slate-900 hover:-translate-y-0.5 transition"
-          >
-            View Projects
-          </a>
+          <Link
+              to="/projects"
+              className="rounded-full bg-sky-400 px-7 py-3 text-sm font-medium text-slate-900 hover:-translate-y-0.5 transition"
+            >
+              View Projects
+            </Link>
+            
+            <Link
+              to="/contact"
+              className="rounded-full border border-white/20 px-7 py-3 text-sm text-slate-200 hover:bg-white/5 transition"
+            >
+              Contact Me
+          </Link>
 
-          <a
-            href="/contact"
-            className="rounded-full border border-white/20 px-7 py-3 text-sm text-slate-200 hover:bg-white/5 transition"
-          >
-            Contact Me
-          </a>
         </div>
       </div>
 
