@@ -20,7 +20,7 @@ export const projects = [
       "Focused on performance and maintainable React components",
     ],
     tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
-    live: "https://your-vercel-link.vercel.app/",
+    live: "https://react-portfolio-gold-delta.vercel.app/",
     code: "https://github.com/your-username/portfolio",
   },
 ];
