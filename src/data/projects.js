@@ -1,7 +1,10 @@
+import cineflix from "../assets/cineflix.png";
+import portfolio from "../assets/portfolio.png";
+
 export const projects = [
   {
     title: "CineFlix – Streaming Platform UI",
-    image: "/src/assets/cineflix.png",
+    image: cineflix,
     points: [
       "Built reusable React components for a scalable UI structure",
       "Integrated external movie API for dynamic content rendering",
@@ -13,7 +16,7 @@ export const projects = [
   },
   {
     title: "Personal Portfolio Website",
-    image: "/src/assets/portfolio.png",
+    image: portfolio,
     points: [
       "Designed a clean, responsive UI with structured sections",
       "Implemented subtle animations using GSAP",
