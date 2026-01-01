@@ -7,12 +7,14 @@ import ExperiencePage from "./pages/ExperiencePage";
 import ContactPage from "./pages/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import CustomCursor from "./components/CustomCursor";
+import SocialLinks from "./components/SocialLinks";
 
 function App() {
   return (
     <>
       <CustomCursor />
       <NavBar />
+       <SocialLinks />
 
       <Routes>
         <Route
