@@ -2,36 +2,37 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import profileHero from "../assets/profile-hero.png";
+import HeroCodeVisual from "../components/HeroCodeVisual";
 
 export default function Hero() {
   const heroRef = useRef(null);
   const textRef = useRef(null);
-  const photoRef = useRef(null);
+ // const photoRef = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  // useEffect(() => {
+  //   const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.from(heroRef.current, { opacity: 0, duration: 0.6 })
-      .from(
-        textRef.current.children,
-        {
-          y: 24,
-          opacity: 0,
-          stagger: 0.15,
-          duration: 0.5,
-        },
-        "-=0.3"
-      )
-      .from(
-        photoRef.current,
-        {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-        },
-        "-=0.5"
-      );
-  }, []);
+  //   tl.from(heroRef.current, { opacity: 0, duration: 0.6 })
+  //     .from(
+  //       textRef.current.children,
+  //       {
+  //         y: 24,
+  //         opacity: 0,
+  //         stagger: 0.15,
+  //         duration: 0.5,
+  //       },
+  //       "-=0.3"
+  //     )
+  //     .from(
+  //       photoRef.current,
+  //       {
+  //         y: 40,
+  //         opacity: 0,
+  //         duration: 0.6,
+  //       },
+  //       "-=0.5"
+  //     );
+  // }, []);
 
   return (
     <section
@@ -82,8 +83,15 @@ export default function Hero() {
         </div>
       </div>
 
+
+      {/* RIGHT SIDE */}
+<div className="w-full order-2 lg:order-none lg:col-span-7 flex justify-center">
+  <HeroCodeVisual />
+</div>
+
+
       {/* IMAGE — BELOW TEXT ON MOBILE */}
-      <div
+      {/* <div
         ref={photoRef}
         className="w-full order-2 lg:order-none lg:col-span-7 flex justify-center"
       >
@@ -101,7 +109,7 @@ export default function Hero() {
             brightness-[0.95]
           "
         />
-      </div>
+      </div> */}
     </section>
   );
 }
