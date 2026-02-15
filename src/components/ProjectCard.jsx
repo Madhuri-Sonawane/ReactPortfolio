@@ -43,30 +43,86 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* Actions */}
-        <div className="mt-6 flex gap-6 text-sm">
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center
-               rounded-full bg-sky-400 px-5 py-2
-               text-sm font-medium text-slate-900
-               hover:-translate-y-0.5 transition"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.code}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center
-               rounded-full border border-white/20 px-5 py-2
-               text-sm text-slate-200
-               hover:bg-white/5 transition"
-          >
-            Source Code
-          </a>
-        </div>
+       {/* Actions */}
+<div className="mt-6 space-y-4 text-sm">
+
+  {/* Live Links */}
+  {Array.isArray(project.live) ? (
+    <div className="flex flex-wrap gap-3">
+      {project.live.map((item, index) => (
+        <a
+          key={index}
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
+          className="
+            inline-flex items-center justify-center
+            rounded-full bg-sky-400 px-4 py-2
+            text-xs font-medium text-slate-900
+            hover:-translate-y-0.5 transition
+          "
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  ) : (
+    project.live && (
+      <a
+        href={project.live}
+        target="_blank"
+        rel="noreferrer"
+        className="
+          inline-flex items-center justify-center
+          rounded-full bg-sky-400 px-5 py-2
+          text-sm font-medium text-slate-900
+          hover:-translate-y-0.5 transition
+        "
+      >
+        Live Demo
+      </a>
+    )
+  )}
+
+  {/* Code Links */}
+  {Array.isArray(project.code) ? (
+    <div className="flex flex-wrap gap-3">
+      {project.code.map((item, index) => (
+        <a
+          key={index}
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
+          className="
+            inline-flex items-center justify-center
+            rounded-full border border-white/20 px-4 py-2
+            text-xs text-slate-200
+            hover:bg-white/5 transition
+          "
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  ) : (
+    project.code && (
+      <a
+        href={project.code}
+        target="_blank"
+        rel="noreferrer"
+        className="
+          inline-flex items-center justify-center
+          rounded-full border border-white/20 px-5 py-2
+          text-sm text-slate-200
+          hover:bg-white/5 transition
+        "
+      >
+        Source Code
+      </a>
+    )
+  )}
+</div>
+
       </div>
     </div>
   );

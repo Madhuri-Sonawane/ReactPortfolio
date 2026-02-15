@@ -25,13 +25,13 @@ export const projects = [
     ],
     tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
     live: "https://react-portfolio-gold-delta.vercel.app/",
-    code: "https://github.com/Madhuri-Sonawane/portfolio",
+    code: "https://github.com/Madhuri-Sonawane/ReactPortfolio",
   },
   {
   title: "Secure Exam Environment (MERN Full Stack)",
   image: TestEnvironment,
   points: [
-    "Built secure proctored exam system with webcam + tab monitoring",
+    "Built secure proctored exam system tab monitoring",
     "Separate Employer & Candidate dashboards",
     "Backend authentication with JWT and MongoDB Atlas"
   ],
@@ -52,7 +52,7 @@ export const projects = [
   ],
 
   code: [
-    { label: "Frontend Repo", url: "https://github.com/Madhuri-Sonawane/online-exam-checker" },
+    { label: "Frontend Repo", url: "https://github.com/Madhuri-Sonawane/exam-secure-environment" },
     { label: "Backend Repo", url: "https://github.com/Madhuri-Sonawane/exam-secure-environment" }
   ]
 },
