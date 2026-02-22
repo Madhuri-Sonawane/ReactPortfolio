@@ -1,6 +1,6 @@
 🚀 Personal Portfolio – React
 
-A modern, responsive personal portfolio built with React, Vite, Tailwind CSS, and GSAP.
+A modern, responsive personal portfolio built with React, Vite, Tailwind CSS, and GSAP
 Designed to showcase projects, skills, and experience with a clean UI, smooth animations, and a strong visual hierarchy.
 
 ✨ Features
