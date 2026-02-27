@@ -56,4 +56,16 @@ export const projects = [
     { label: "Backend Repo", url: "https://github.com/Madhuri-Sonawane/exam-secure-environment" }
   ]
 },
+ {
+    title: "AI-SAAS-DASHBOARD",
+    image: portfolio,
+    points: [
+      "Designed a clean, responsive UI with structured sections",
+      "Implemented subtle animations using GSAP",
+      "Focused on performance and maintainable React components",
+    ],
+    tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
+    code: "https://github.com/Madhuri-Sonawane/ReactPortfolio",
+  },
 ];
+
