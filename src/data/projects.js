@@ -1,7 +1,7 @@
 import cineflix from "../assets/cineflix.png";
 import portfolio from "../assets/portfolio.png";
 import TestEnvironment from "../assets/TestEnvironment.png";
-
+import assaasdashboard from "../assets/assaasdashboard.png"
 export const projects = [
   {
     title: "CineFlix – Streaming Platform UI",
@@ -70,7 +70,7 @@ export const projects = [
   },
   {
     title: "AI-SAAS-DASHBOARD",
-    image: portfolio,
+    image: assaasdashboard,
     points: [
       "Email/password and Google OAuth login",
       "Protected routes and persistent sessions",
