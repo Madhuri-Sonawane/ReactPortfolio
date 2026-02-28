@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* ─── Fonts ──────────────────────────────────────────────── */
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #020817; /* slate-950 */
+  color: #cbd5e1;             /* slate-300 */
+}
+
+h1, h2, h3, h4 {
+  font-family: "Sora", sans-serif;
+}
+
+/* ─── Scroll reveal helper (initial hidden state) ────────── */
+/* GSAP will animate elements with this class on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+/* ─── Text gradient ──────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Skill card ─────────────────────────────────────────── */
+.skill-card {
+  @apply rounded-2xl border border-sky-400/20 bg-slate-900/60 p-6
+         transition-all duration-300
+         hover:-translate-y-1
+         hover:border-sky-400/50
+         hover:shadow-[0_16px_40px_rgba(56,189,248,0.15)];
+}
+
+.skill-title {
+  @apply text-base font-semibold text-slate-100 mb-3;
+}
+
+.skill-icons {
+  @apply flex gap-3 text-2xl text-sky-400 mb-3;
+}
+
+.skill-desc {
+  @apply text-sm text-slate-400 leading-relaxed;
+}
+
+/* ─── Skill pill ─────────────────────────────────────────── */
+.skill-pill {
+  @apply flex items-center gap-1.5 px-4 py-2 rounded-full
+         border border-slate-700 bg-slate-800/60
+         text-sm text-slate-300
+         transition-all duration-200
+         hover:border-sky-400/50
+         hover:text-sky-300
+         hover:bg-sky-400/10;
+}
+
+/* ─── Contact input ──────────────────────────────────────── */
+.contact-input {
+  @apply w-full rounded-xl border border-white/10
+         bg-slate-800/60 px-4 py-3
+         text-sm text-slate-100
+         placeholder:text-slate-500
+         outline-none
+         transition-all duration-200
+         focus:border-sky-400/60
+         focus:ring-1 focus:ring-sky-400/30;
+}
+
+/* ─── Scrollbar styling ──────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020817;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* ─── Page transition (used in App.jsx) ──────────────────── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
