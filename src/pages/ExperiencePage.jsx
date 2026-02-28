@@ -4,128 +4,165 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ── Data ── */
-const ROLE = {
-  title: "Junior React Developer",
-  company: "Makedreams Technologies",
-  period: "Oct 2024 – Present",
-  type: "Full-time",
-  location: "Remote",
-};
-
-const CONTRIBUTIONS = [
+/* ────────────────────────────────────────────
+   DATA — add more jobs to EXPERIENCES array
+──────────────────────────────────────────── */
+const EXPERIENCES = [
   {
     id: "01",
-    tag: "UI Development",
+    title: "Junior React Developer",
+    company: "Makedreams Technologies",
+    period: "Oct 2024 – Present",
+    type: "Full-time",
+    location: "Remote",
+    current: true,
     color: "sky",
-    headline: "Building Interfaces",
-    body: "Developed responsive web interfaces using React, JavaScript (ES6+), HTML, and CSS — focusing on reusable components and consistent UI behavior across devices.",
-    stack: ["React", "JavaScript", "HTML5", "CSS3"],
+    summary:
+      "Building scalable React interfaces at the intersection of design and engineering — focused on clean components, API integration, and real delivery.",
+    contributions: [
+      {
+        tag: "UI Development",
+        headline: "Building Interfaces",
+        body: "Developed responsive web interfaces using React, JavaScript (ES6+), HTML, and CSS — focusing on reusable components and consistent UI behavior across devices.",
+        stack: ["React", "JavaScript", "HTML5", "CSS3"],
+      },
+      {
+        tag: "State & Data",
+        headline: "Data & State Handling",
+        body: "Integrated REST APIs and managed application state using React Hooks and Context API, ensuring predictable data flow and smooth user interactions.",
+        stack: ["React Hooks", "Context API", "REST APIs", "Axios"],
+      },
+      {
+        tag: "Collaboration",
+        headline: "Collaboration & Delivery",
+        body: "Collaborated closely with UI/UX designers, used Git and GitHub for version control, and deployed applications on Vercel and Netlify.",
+        stack: ["Git", "GitHub", "Vercel", "Netlify"],
+      },
+    ],
   },
+
+  /* ── ADD MORE JOBS BELOW ─────────────────────────────────
   {
     id: "02",
-    tag: "State & Data",
-    color: "indigo",
-    headline: "Data & State Handling",
-    body: "Integrated REST APIs and managed application state using React Hooks and Context API, ensuring predictable data flow and smooth user interactions.",
-    stack: ["React Hooks", "Context API", "REST APIs", "Axios"],
+    title: "Frontend Intern",
+    company: "Your Company Name",
+    period: "Jun 2024 – Sep 2024",
+    type: "Internship",
+    location: "On-site",
+    current: false,
+    color: "indigo",           // sky | indigo | emerald | amber | rose
+    summary: "Short summary of what you did at this company.",
+    contributions: [
+      {
+        tag: "Feature Work",
+        headline: "What You Built",
+        body: "Describe your key responsibilities and achievements here in 2-3 sentences.",
+        stack: ["React", "CSS", "Git"],
+      },
+    ],
   },
-  {
-    id: "03",
-    tag: "Collaboration",
-    color: "emerald",
-    headline: "Collaboration & Delivery",
-    body: "Collaborated closely with UI/UX designers, used Git and GitHub for version control, and deployed applications on Vercel and Netlify as part of real delivery cycles.",
-    stack: ["Git", "GitHub", "Vercel", "Netlify"],
-  },
+  ─────────────────────────────────────────────────────── */
 ];
 
 const METRICS = [
-  { value: "1+", label: "Year Experience" },
-  { value: "3+", label: "Projects Shipped" },
-  { value: "10+", label: "Components Built" },
-  { value: "100%", label: "Remote Ready" },
+  { value: "1+",   label: "Years Experience" },
+  { value: "3+",   label: "Projects Shipped"  },
+  { value: "10+",  label: "Components Built"  },
+  { value: "100%", label: "Remote Ready"       },
 ];
 
-const COLOR_MAP = {
-  sky:     { dot: "bg-sky-400",     border: "border-sky-400/25",     tag: "bg-sky-400/10 text-sky-300 border-sky-400/25",     glow: "rgba(56,189,248,0.08)",  line: "bg-sky-400/40"    },
-  indigo:  { dot: "bg-indigo-400",  border: "border-indigo-400/25",  tag: "bg-indigo-400/10 text-indigo-300 border-indigo-400/25",  glow: "rgba(129,140,248,0.08)", line: "bg-indigo-400/40" },
-  emerald: { dot: "bg-emerald-400", border: "border-emerald-400/25", tag: "bg-emerald-400/10 text-emerald-300 border-emerald-400/25", glow: "rgba(52,211,153,0.08)",  line: "bg-emerald-400/40" },
+const COLOR = {
+  sky:     { accent: "text-sky-400",     border: "border-sky-400/30",     bg: "bg-sky-400/8",     dot: "bg-sky-400",     tag: "bg-sky-400/10 text-sky-300 border border-sky-400/25",     activetab: "border-sky-400 text-sky-400",     glow: "rgba(56,189,248,0.07)"    },
+  indigo:  { accent: "text-indigo-400",  border: "border-indigo-400/30",  bg: "bg-indigo-400/8",  dot: "bg-indigo-400",  tag: "bg-indigo-400/10 text-indigo-300 border border-indigo-400/25",  activetab: "border-indigo-400 text-indigo-400",  glow: "rgba(129,140,248,0.07)" },
+  emerald: { accent: "text-emerald-400", border: "border-emerald-400/30", bg: "bg-emerald-400/8", dot: "bg-emerald-400", tag: "bg-emerald-400/10 text-emerald-300 border border-emerald-400/25", activetab: "border-emerald-400 text-emerald-400", glow: "rgba(52,211,153,0.07)"  },
+  amber:   { accent: "text-amber-400",   border: "border-amber-400/30",   bg: "bg-amber-400/8",   dot: "bg-amber-400",   tag: "bg-amber-400/10 text-amber-300 border border-amber-400/25",   activetab: "border-amber-400 text-amber-400",   glow: "rgba(251,191,36,0.07)"  },
+  rose:    { accent: "text-rose-400",    border: "border-rose-400/30",    bg: "bg-rose-400/8",    dot: "bg-rose-400",    tag: "bg-rose-400/10 text-rose-300 border border-rose-400/25",    activetab: "border-rose-400 text-rose-400",    glow: "rgba(251,113,133,0.07)" },
 };
 
 /* ── Blinking cursor ── */
-function Cursor() {
+function Cursor({ color = "sky" }) {
+  const c = COLOR[color];
   return (
-    <span className="inline-block w-[2px] h-[1em] bg-sky-400 ml-0.5 align-middle
-                     animate-[blink_1s_step-end_infinite]" />
+    <span className={`inline-block w-[2px] h-[0.85em] ${c.dot} ml-0.5 align-middle
+                      animate-[blink_1s_step-end_infinite]`} />
   );
 }
 
-/* ── Contribution block ── */
-function ContributionBlock({ item, index }) {
-  const blockRef = useRef(null);
-  const c = COLOR_MAP[item.color];
+/* ── Sidebar job tab ── */
+function JobTab({ exp, active, onClick }) {
+  const c = COLOR[exp.color];
+  return (
+    <button
+      onClick={onClick}
+      className={`relative w-full text-left px-4 py-4 rounded-xl border
+                  transition-all duration-300 overflow-hidden group
+        ${active
+          ? `${c.border} ${c.bg}`
+          : "border-white/6 bg-transparent hover:border-white/12 hover:bg-white/[0.02]"
+        }`}
+    >
+      {/* Active left bar */}
+      {active && (
+        <div className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-r-full ${c.dot}`} />
+      )}
+      {/* Hover glow */}
+      {active && (
+        <div className="absolute inset-0 pointer-events-none"
+             style={{ background: `radial-gradient(ellipse at left center, ${c.glow}, transparent 70%)` }} />
+      )}
+
+      <div className="relative flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <p className={`text-xs font-bold font-[Sora] truncate transition-colors duration-200
+                         ${active ? c.accent : "text-slate-400 group-hover:text-slate-200"}`}>
+            {exp.title}
+          </p>
+          <p className="text-[11px] text-slate-600 truncate mt-0.5">{exp.company}</p>
+          <p className="text-[10px] text-slate-700 font-mono mt-1">{exp.period}</p>
+        </div>
+        {exp.current && (
+          <div className={`flex-shrink-0 mt-0.5 w-2 h-2 rounded-full ${c.dot} animate-pulse`} />
+        )}
+      </div>
+    </button>
+  );
+}
+
+/* ── Contribution row inside detail panel ── */
+function ContributionRow({ item, index, color }) {
+  const ref = useRef(null);
+  const c = COLOR[color];
 
   useEffect(() => {
-    gsap.fromTo(blockRef.current,
-      { opacity: 0, x: -30 },
-      {
-        opacity: 1, x: 0, duration: 0.65, ease: "power3.out",
-        scrollTrigger: { trigger: blockRef.current, start: "top 88%" },
-        delay: index * 0.1,
-      }
+    gsap.fromTo(ref.current,
+      { opacity: 0, x: 16 },
+      { opacity: 1, x: 0, duration: 0.45, ease: "power3.out", delay: index * 0.09 }
     );
-  }, [index]);
+  }, [index, color]);
 
   return (
     <div
-      ref={blockRef}
-      className={`group relative rounded-2xl border ${c.border} p-6
-                  transition-all duration-300 hover:-translate-y-1
-                  hover:shadow-[0_20px_50px_var(--glow)]`}
-      style={{
-        opacity: 0,
-        background: `radial-gradient(ellipse at top left, ${c.glow}, transparent 70%)`,
-        "--glow": c.glow,
-      }}
+      ref={ref}
+      className={`group rounded-xl border ${c.border} bg-slate-900/40 p-5
+                  transition-all duration-300 hover:-translate-y-0.5
+                  hover:shadow-[0_10px_28px_var(--row-glow)]`}
+      style={{ opacity: 0, "--row-glow": c.glow }}
     >
-      {/* Top row */}
-      <div className="flex items-center justify-between gap-4 mb-4">
-        {/* Process ID + tag */}
-        <div className="flex items-center gap-3">
-          <span className="font-[Sora] text-xs font-bold text-slate-600 tracking-widest">
-            {item.id}
-          </span>
-          <span className={`px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider
-                            rounded-full border ${c.tag}`}>
-            {item.tag}
-          </span>
-        </div>
-        {/* Animated status dot */}
-        <div className="flex items-center gap-1.5">
-          <div className={`w-1.5 h-1.5 rounded-full ${c.dot} animate-pulse`} />
-          <span className="text-[10px] text-slate-600 uppercase tracking-widest">active</span>
-        </div>
+      <div className="flex items-start justify-between gap-3 mb-2.5">
+        <h4 className="text-sm font-bold text-slate-100 font-[Sora] leading-snug">
+          {item.headline}
+        </h4>
+        <span className={`flex-shrink-0 px-2 py-0.5 text-[10px] font-semibold uppercase
+                          tracking-wider rounded-full ${c.tag}`}>
+          {item.tag}
+        </span>
       </div>
-
-      {/* Headline */}
-      <h3 className="text-xl font-bold text-slate-100 font-[Sora] leading-snug mb-3
-                     group-hover:text-white transition-colors duration-200">
-        {item.headline}
-      </h3>
-
-      {/* Body */}
-      <p className="text-sm text-slate-400 leading-relaxed mb-5">
-        {item.body}
-      </p>
-
-      {/* Stack pills */}
-      <div className="flex flex-wrap gap-2">
+      <p className="text-xs text-slate-400 leading-relaxed mb-4">{item.body}</p>
+      <div className="flex flex-wrap gap-1.5">
         {item.stack.map((s) => (
-          <span key={s}
-            className="px-2.5 py-1 text-[11px] rounded-md border border-white/8
-                       bg-white/[0.03] text-slate-400
-                       transition-colors duration-200 group-hover:border-white/15">
+          <span key={s} className="px-2 py-0.5 text-[10px] rounded-md border border-white/8
+                                   bg-white/[0.03] text-slate-500 transition-colors
+                                   group-hover:text-slate-400 group-hover:border-white/15">
             {s}
           </span>
         ))}
@@ -134,13 +171,109 @@ function ContributionBlock({ item, index }) {
   );
 }
 
+/* ── Detail panel for selected job ── */
+function ExperienceDetail({ exp }) {
+  const panelRef = useRef(null);
+  const c = COLOR[exp.color];
+  const [typed, setTyped] = useState("");
+
+  /* Typewriter on switch */
+  useEffect(() => {
+    setTyped("");
+    let i = 0;
+    const id = setInterval(() => {
+      if (i <= exp.title.length) { setTyped(exp.title.slice(0, i)); i++; }
+      else clearInterval(id);
+    }, 45);
+    return () => clearInterval(id);
+  }, [exp.title]);
+
+  /* Fade on switch */
+  useEffect(() => {
+    gsap.fromTo(panelRef.current,
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
+    );
+  }, [exp.id]);
+
+  return (
+    <div ref={panelRef} className="flex flex-col gap-7" style={{ opacity: 0 }}>
+
+      {/* ── Role header card ── */}
+      <div className={`rounded-2xl border ${c.border} overflow-hidden`}
+           style={{ background: `radial-gradient(ellipse at top left, ${c.glow}, transparent 55%)` }}>
+
+        {/* Terminal bar */}
+        <div className="flex items-center gap-2 px-5 py-3 bg-slate-950/60 border-b border-white/6">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/60" />
+          <span className="ml-2 text-[11px] text-slate-600 font-mono">experience.json</span>
+          {exp.current && (
+            <span className="ml-auto flex items-center gap-1.5 text-[10px] text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Currently Active
+            </span>
+          )}
+        </div>
+
+        <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+          {/* Title */}
+          <div>
+            <span className="text-[10px] font-mono text-slate-600 mb-2 block">role:</span>
+            <h2 className={`text-2xl md:text-3xl font-black font-[Sora] ${c.accent} leading-tight`}>
+              {typed}<Cursor color={exp.color} />
+            </h2>
+          </div>
+          {/* JSON meta */}
+          <div className="font-mono text-xs space-y-2 pt-1">
+            {[
+              { k: "company",  v: exp.company  },
+              { k: "period",   v: exp.period   },
+              { k: "type",     v: exp.type     },
+              { k: "location", v: exp.location },
+            ].map(({ k, v }) => (
+              <div key={k} className="flex gap-3">
+                <span className={`${c.accent} opacity-60 min-w-[60px]`}>{k}</span>
+                <span className="text-slate-400">"<span className="text-slate-200">{v}</span>"</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Summary */}
+        <div className="px-6 py-4 border-t border-white/6 bg-slate-950/30">
+          <p className="text-xs text-slate-400 leading-relaxed italic">"{exp.summary}"</p>
+        </div>
+      </div>
+
+      {/* ── Contributions ── */}
+      <div>
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-slate-600 font-semibold">
+            Contributions
+          </span>
+          <div className="flex-1 h-px bg-white/6" />
+          <span className="text-[10px] font-mono text-slate-700">
+            {exp.contributions.length} tasks
+          </span>
+        </div>
+        <div className="grid grid-cols-1 gap-3">
+          {exp.contributions.map((item, i) => (
+            <ContributionRow key={item.tag} item={item} index={i} color={exp.color} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── Metric card ── */
 function MetricCard({ value, label, index }) {
   const ref = useRef(null);
-
   useEffect(() => {
     gsap.fromTo(ref.current,
-      { opacity: 0, y: 24, scale: 0.95 },
+      { opacity: 0, y: 20, scale: 0.95 },
       {
         opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.4)",
         scrollTrigger: { trigger: ref.current, start: "top 92%" },
@@ -151,54 +284,33 @@ function MetricCard({ value, label, index }) {
 
   return (
     <div ref={ref}
-      className="rounded-2xl border border-white/8 bg-slate-900/50 p-6 text-center
+      className="rounded-2xl border border-white/8 bg-slate-900/40 p-5 text-center
                  transition-all duration-300 hover:-translate-y-1
-                 hover:border-sky-400/30 hover:shadow-[0_16px_40px_rgba(56,189,248,0.1)]"
+                 hover:border-sky-400/30 hover:shadow-[0_16px_40px_rgba(56,189,248,0.08)]"
       style={{ opacity: 0 }}>
       <p className="text-3xl font-black text-sky-400 font-[Sora]">{value}</p>
-      <p className="mt-1.5 text-xs text-slate-500 uppercase tracking-widest">{label}</p>
+      <p className="mt-1 text-[10px] text-slate-600 uppercase tracking-widest">{label}</p>
     </div>
   );
 }
 
-/* ── Page ── */
+/* ────────────────────────────────────────────
+   PAGE
+──────────────────────────────────────────── */
 export default function ExperiencePage() {
-  const pageRef = useRef(null);
+  const [activeId, setActiveId] = useState(EXPERIENCES[0].id);
+  const pageRef   = useRef(null);
   const headerRef = useRef(null);
-  const jobCardRef = useRef(null);
-  const [typed, setTyped] = useState("");
-  const fullText = "Junior React Developer";
 
-  /* Typewriter on mount */
-  useEffect(() => {
-    let i = 0;
-    const id = setInterval(() => {
-      if (i <= fullText.length) {
-        setTyped(fullText.slice(0, i));
-        i++;
-      } else {
-        clearInterval(id);
-      }
-    }, 55);
-    return () => clearInterval(id);
-  }, []);
+  const activeExp = EXPERIENCES.find((e) => e.id === activeId);
 
-  /* GSAP header + job card entrance */
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(Array.from(headerRef.current.children),
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 28 },
         {
-          opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.1,
+          opacity: 1, y: 0, duration: 0.65, ease: "power3.out", stagger: 0.1,
           scrollTrigger: { trigger: headerRef.current, start: "top 88%" },
-        }
-      );
-      gsap.fromTo(jobCardRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1, y: 0, duration: 0.7, ease: "power3.out",
-          scrollTrigger: { trigger: jobCardRef.current, start: "top 88%" },
-          delay: 0.15,
         }
       );
     }, pageRef);
@@ -208,14 +320,13 @@ export default function ExperiencePage() {
   return (
     <div ref={pageRef} className="relative min-h-screen px-[8%] py-28 overflow-hidden">
 
-      {/* ── Atmosphere ── */}
+      {/* ── Background ── */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px]
-                        rounded-full bg-sky-400/[0.03] blur-[130px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px]
+                        rounded-full bg-sky-400/[0.025] blur-[130px]" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px]
-                        rounded-full bg-indigo-500/[0.03] blur-[120px]" />
-        {/* Dot grid */}
-        <div className="absolute inset-0 opacity-[0.04]"
+                        rounded-full bg-indigo-500/[0.025] blur-[120px]" />
+        <div className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: "radial-gradient(rgba(148,163,184,0.8) 1px, transparent 1px)",
             backgroundSize: "28px 28px",
@@ -223,7 +334,7 @@ export default function ExperiencePage() {
         />
       </div>
 
-      {/* ── Page header ── */}
+      {/* ── Header ── */}
       <div ref={headerRef} className="max-w-6xl mb-16">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
@@ -232,84 +343,54 @@ export default function ExperiencePage() {
           </span>
         </div>
         <h1 className="text-5xl md:text-6xl font-black text-slate-100 font-[Sora]
-                       leading-tight tracking-tight" style={{ opacity: 0 }}>
+                       leading-tight tracking-tight">
           How I Work<span className="text-sky-400">.</span>
         </h1>
-        <p className="mt-5 text-base text-slate-500 max-w-xl leading-relaxed" style={{ opacity: 0 }}>
+        <p className="mt-5 text-base text-slate-500 max-w-xl leading-relaxed">
           A designer–developer approach to building React applications —
           combining clean UI, interaction thinking, and real-world engineering.
         </p>
       </div>
 
-      {/* ── Job card ── */}
-      <div ref={jobCardRef}
-        className="max-w-6xl mb-20 rounded-2xl border border-white/8 bg-slate-900/40
-                   overflow-hidden"
-        style={{ opacity: 0 }}>
+      {/* ── Two-column layout ── */}
+      <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 mb-24 items-start">
 
-        {/* Terminal top bar */}
-        <div className="flex items-center gap-2 px-5 py-3 bg-slate-900/80 border-b border-white/6">
-          <div className="w-3 h-3 rounded-full bg-red-500/70" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-          <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
-          <span className="ml-3 text-xs text-slate-600 font-mono">experience.json</span>
-        </div>
+        {/* LEFT — sticky sidebar */}
+        <div className="lg:sticky lg:top-24 flex flex-col gap-3">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-600 font-semibold
+                        mb-1 px-1">
+            Companies
+          </p>
 
-        {/* Card body */}
-        <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {EXPERIENCES.map((exp) => (
+            <JobTab
+              key={exp.id}
+              exp={exp}
+              active={activeId === exp.id}
+              onClick={() => setActiveId(exp.id)}
+            />
+          ))}
 
-          {/* Left — title */}
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs font-mono text-slate-600">role:</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-100 font-[Sora] leading-tight">
-              {typed}<Cursor />
-            </h2>
-
-            <div className="mt-5 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-sm font-semibold text-emerald-400">Currently Active</span>
-            </div>
-          </div>
-
-          {/* Right — meta */}
-          <div className="font-mono text-sm space-y-3">
-            {[
-              { key: "company",  value: ROLE.company  },
-              { key: "period",   value: ROLE.period   },
-              { key: "type",     value: ROLE.type     },
-              { key: "location", value: ROLE.location },
-            ].map(({ key, value }) => (
-              <div key={key} className="flex items-baseline gap-3">
-                <span className="text-sky-400/70 min-w-[72px]">{key}</span>
-                <span className="text-slate-400">"<span className="text-slate-200">{value}</span>"</span>
-              </div>
-            ))}
+          {/* Count badge */}
+          <div className="mt-3 px-4 py-3 rounded-xl border border-white/6 bg-slate-900/30
+                          text-center">
+            <p className="text-2xl font-black text-slate-400 font-[Sora]">
+              {String(EXPERIENCES.length).padStart(2, "0")}
+            </p>
+            <p className="text-[10px] uppercase tracking-widest text-slate-600 mt-0.5">
+              {EXPERIENCES.length === 1 ? "Company" : "Companies"}
+            </p>
           </div>
         </div>
+
+        {/* RIGHT — detail panel */}
+        <ExperienceDetail key={activeExp.id} exp={activeExp} />
       </div>
 
-      {/* ── Section label ── */}
-      <div className="max-w-6xl mb-8 flex items-center gap-4">
-        <span className="text-xs uppercase tracking-[0.2em] text-slate-600 font-semibold">
-          Contributions
-        </span>
-        <div className="flex-1 h-px bg-white/6" />
-        <span className="text-xs text-slate-700 font-mono">{CONTRIBUTIONS.length} processes</span>
-      </div>
-
-      {/* ── Contribution blocks ── */}
-      <div className="max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
-        {CONTRIBUTIONS.map((item, i) => (
-          <ContributionBlock key={item.id} item={item} index={i} />
-        ))}
-      </div>
-
-      {/* ── Metrics ── */}
+      {/* ── Stats ── */}
       <div className="max-w-6xl">
         <div className="flex items-center gap-4 mb-8">
-          <span className="text-xs uppercase tracking-[0.2em] text-slate-600 font-semibold">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-slate-600 font-semibold">
             Stats
           </span>
           <div className="flex-1 h-px bg-white/6" />
@@ -321,13 +402,7 @@ export default function ExperiencePage() {
         </div>
       </div>
 
-      {/* ── CSS for blinking cursor ── */}
-      <style>{`
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-      `}</style>
+      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
     </div>
   );
 }
