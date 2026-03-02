@@ -118,7 +118,7 @@ export default function Skills() {
         ))}
       </div>
 
-      {/* Pills */}
+      {/* Pills
       <div className="mt-16 max-w-6xl" ref={pillsRef} style={{ opacity: 0 }}>
         <h4 className="text-sm uppercase tracking-widest text-slate-400 mb-6">
           Additional Technologies
@@ -130,7 +130,7 @@ export default function Skills() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
