@@ -8,13 +8,15 @@ import ContactPage from "./pages/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import CustomCursor from "./components/CustomCursor";
 import SocialLinks from "./components/SocialLinks";
+import GlobalBackground from "./components/GlobalBackground";
 
 function App() {
   return (
     <>
       <CustomCursor />
+      <GlobalBackground />
       <NavBar />
-       <SocialLinks />
+      <SocialLinks />
 
       <Routes>
         <Route
