@@ -6,27 +6,6 @@ import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PROJECTS = [
-  {
-    title: "CineFlix – Movie Streaming UI",
-    description:
-      "A Netflix-style frontend application built with React. Focused on component structure, API-driven data rendering, responsive layouts, and smooth UI animations.",
-    tech: ["React", "JavaScript", "Tailwind CSS", "GSAP"],
-    live: "https://cine-flix-pi.vercel.app/",
-    code: "https://github.com/Madhuri-Sonawane/CineFlix",
-    featured: true,
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio built with React and Tailwind CSS to showcase projects, skills, and frontend development practices with a clean, professional UI.",
-    tech: ["React", "Tailwind CSS", "GSAP", "Vite"],
-    live: "#",
-    code: "#",
-    featured: false,
-  },
-];
-
 function ProjectCard({ project, index, cardRef }) {
   return (
     <div
