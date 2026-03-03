@@ -1,44 +1,104 @@
-🚀 Personal Portfolio – React
+# Madhuri Sonawane — React Portfolio
 
-A modern, responsive personal portfolio built with React, Vite, Tailwind CSS, and GSAP
-Designed to showcase projects, skills, and experience with a clean UI, smooth animations, and a strong visual hierarchy.
+A personal developer portfolio built with React 19, Vite 7, Tailwind CSS v4, and GSAP 3. Features a 3D animated background built with Three.js, smooth scroll animations, interactive project modals, and a fully functional contact form.
 
-✨ Features
+**Live Site:** https://react-portfolio-gold-delta.vercel.app/
 
-Responsive layout optimized for all screen sizes
 
-Modern Hero section with animated entrance (GSAP)
+**GitHub:** https://github.com/Madhuri-Sonawane/ReactPortfolio
 
-Clean section-based structure: About, Skills, Projects, Contact
+---
 
-Interactive skill cards and project cards
+## Tech Stack
 
-Smooth scroll and subtle UI animations
+- React 19 + React Router DOM 7
+- Vite 7
+- Tailwind CSS v4
+- GSAP 3.14 with ScrollTrigger
+- Three.js
+- EmailJS
+- react-icons
+- Fonts: Sora, DM Sans
 
-Dark, premium UI design
+---
 
-Fast performance using Vite
+## Pages
 
-🛠️ Tech Stack
+- **Home** — Hero with typewriter animation and a 3D rotating monitor showing code, React logo, and skill bars
+- **About** — Bento grid layout with interactive academic timeline (hover to highlight each qualification)
+- **Projects** — Editorial row layout with a slide-in overlay modal for each project
+- **Experience** — Sidebar tab switcher with terminal-style job cards and animated contributions
+- **Contact** — Split-screen layout with floating label inputs and EmailJS integration
 
-React – Component-based UI development
+---
 
-Vite – Fast build tool and development server
+## Getting Started
 
-Tailwind CSS – Utility-first styling
+```bash
+git clone https://github.com/Madhuri-Sonawane/ReactPortfolio.git
+cd ReactPortfolio
+npm install
+npm run dev
+```
 
-GSAP – Animations and transitions
+Open http://localhost:5173
 
-JavaScript (ES6+) – Core logic
+```bash
+# Production build
+npm run build
+```
 
-📌 Purpose of This Project
+---
 
-This portfolio was built to:
+## Configuration
 
-Demonstrate practical frontend development skills
+**Resume**
+Place your PDF at `public/Madhuri_Sonawane.pdf`. It is linked in the hero section automatically.
 
-Show clean component structure and modern UI practices
+**EmailJS**
+Update the service ID, template ID, and public key in `src/sections/Contact.jsx` with your credentials from emailjs.com.
 
-Highlight real projects instead of experimental demos
+**Social links**
+Update your email, GitHub, and LinkedIn URLs in `src/sections/Contact.jsx`.
 
-Present information clearly for recruiters and hiring managers
+**Projects**
+Add or edit projects in `src/data/projects.js`. Each project takes a title, description, points array, tech array, image path, live URL, and code URL.
+
+**Adding a new job**
+Open `src/pages/ExperiencePage.jsx` and add a new object to the `EXPERIENCES` array. Each entry takes an id, title, company, period, type, location, current (boolean), color (sky / indigo / emerald / amber / rose), summary, and a contributions array.
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── NavBar.jsx
+│   ├── HeroCodeVisual.jsx
+│   ├── HeroBackground.jsx
+│   └── GlobalBackground.jsx
+├── sections/
+│   ├── Hero.jsx
+│   ├── Skills.jsx
+│   └── Contact.jsx
+├── pages/
+│   ├── AboutPage.jsx
+│   ├── ProjectsPage.jsx
+│   ├── ExperiencePage.jsx
+│   └── ContactPage.jsx
+├── data/
+│   └── projects.js
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## License
+
+MIT — feel free to use this as a reference or starting point for your own portfolio.
+
+Author
+Madhuri Sonawane
