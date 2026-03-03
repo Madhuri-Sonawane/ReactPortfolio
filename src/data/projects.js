@@ -3,7 +3,7 @@ import portfolio from "../assets/portfolio.png";
 import TestEnvironment from "../assets/TestEnvironment.png";
 import assaasdashboard from "../assets/assaasdashboard.png"
 export const projects = [
-   {
+  {
     title: "AI-SAAS-DASHBOARD",
     image: assaasdashboard,
     points: [
@@ -25,20 +25,36 @@ export const projects = [
     ],
     code: "https://github.com/Madhuri-Sonawane/as-saas-dashboard",
   },
-  
+
   {
     title: "CineFlix – Streaming Platform UI",
     image: cineflix,
     points: [
-      "Built reusable React components for a scalable UI structure",
-      "Integrated external movie API for dynamic content rendering",
-      "Focused on responsive layouts and clean component architecture",
+      "Core Features",
+      "Multi-profile system with avatar selection, Kids mode & Owner role",
+      "Real-time movie search & discovery via TMDB API with debounced input",
+      "Genre, rating & year filters with instant live results",
+      "Per-profile Watch Later list & Watch Activity history via localStorage",
+
+      "UI/UX",
+      "Cinematic launch screen with GSAP logo animation and progress bar",
+      "I'm feeling… mood bar for one-click genre filtering",
+      "3D card tilt effect on hover using GSAP mouse tracking",
+      "Animated hero banner with genre tags, star rating bar & letterbox bars",
+      "Skeleton loading cards, frosted glass sidebar, scroll-aware navbar",
+
+      "Technical",
+
+      "CSS token-based Deep Purple + Gold design system",
+      "Fully responsive — sticky sidebar on desktop, animated drawer on mobile",
+      "GSAP timeline animations for page entrances & micro-interactions",
+      "Route-protected pages with auto-redirect on first visit",
     ],
-    tech: ["React", "JavaScript", "Tailwind CSS", "REST API"],
+    tech: ["React", "JavaScript", "Tailwind CSS", "REST API","Vercel","TDMB API","GSAP","Vite",],
     live: "https://cine-flix-pi.vercel.app/",
     code: "https://github.com/Madhuri-Sonawane/cineflix",
   },
-  
+
   {
     title: "Secure Exam Environment (MERN Full Stack)",
     image: TestEnvironment,
@@ -80,7 +96,7 @@ export const projects = [
       },
     ],
   },
- 
+
   {
     title: "Personal Portfolio Website",
     image: portfolio,
