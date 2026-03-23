@@ -4,11 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   SiReact, SiJavascript, SiHtml5, SiCss3,
   SiTailwindcss, SiGit, SiGithub, SiVite,
+  SiGoogleanalytics,
 } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* Icons as render functions (not JSX elements) to avoid key issues */
 const SKILL_CARDS = [
   {
     title: "Frontend",
@@ -44,17 +44,28 @@ const SKILL_CARDS = [
     ],
     desc: "Modern development workflow and version control.",
   },
+  {
+    title: "SEO",
+    icons: [
+      { key: "ga",     el: <SiGoogleanalytics /> },
+      { key: "ahrefs", el: <span className="text-[11px] font-black leading-none">AH</span> },
+      { key: "gsc",    el: <span className="text-[11px] font-black leading-none">GSC</span> },
+      { key: "kw",     el: <span className="text-[11px] font-black leading-none">KW</span> },
+    ],
+    desc: "Analytics, search console, Ahrefs, and keyword research.",
+    seoTags: ["Google Analytics", "Ahrefs", "Search Console", "Keyword Research"],
+  },
 ];
 
 const EXTRA_SKILLS = [
-  { key: "html-pill",  icon: <SiHtml5 />,       label: "HTML"       },
-  { key: "css-pill",   icon: <SiCss3 />,         label: "CSS"        },
-  { key: "react-pill", icon: <SiReact />,        label: "React"      },
-  { key: "js-pill",    icon: <SiJavascript />,   label: "JavaScript" },
-  { key: "tw-pill",    icon: <SiTailwindcss />,  label: "Tailwind"   },
-  { key: "node-pill",  icon: null,               label: "Node.js"    },
-  { key: "api-pill",   icon: null,               label: "REST APIs"  },
-  { key: "git-pill",   icon: <SiGit />,          label: "Git"        },
+  { key: "html-pill",  icon: <SiHtml5 />,      label: "HTML"       },
+  { key: "css-pill",   icon: <SiCss3 />,        label: "CSS"        },
+  { key: "react-pill", icon: <SiReact />,       label: "React"      },
+  { key: "js-pill",    icon: <SiJavascript />,  label: "JavaScript" },
+  { key: "tw-pill",    icon: <SiTailwindcss />, label: "Tailwind"   },
+  { key: "node-pill",  icon: null,              label: "Node.js"    },
+  { key: "api-pill",   icon: null,              label: "REST APIs"  },
+  { key: "git-pill",   icon: <SiGit />,         label: "Git"        },
 ];
 
 export default function Skills() {
@@ -71,7 +82,7 @@ export default function Skills() {
           scrollTrigger: { trigger: headingRef.current, start: "top 85%" } }
       );
 
-      gsap.fromTo(cardsRef.current,
+      gsap.fromTo(cardsRef.current.filter(Boolean),
         { opacity: 0, y: 40 },
         { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.12,
           scrollTrigger: { trigger: cardsRef.current[0], start: "top 85%" } }
@@ -98,15 +109,24 @@ export default function Skills() {
         </h2>
       </div>
 
-      {/* Cards */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl">
+      {/* Cards — 5 columns on xl, 3 on lg, 2 on sm */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl">
         {SKILL_CARDS.map((card, i) => (
           <div
             key={card.title}
             ref={(el) => (cardsRef.current[i] = el)}
-            className="skill-card"
+            className={`skill-card relative ${card.title === "SEO" ? "border-sky-400/20" : ""}`}
             style={{ opacity: 0 }}
           >
+            {/* SEO badge */}
+            {card.title === "SEO" && (
+              <span className="absolute top-3 right-3 text-[9px] uppercase tracking-widest
+                               text-sky-400 font-bold bg-sky-400/10 px-2 py-0.5 rounded-full
+                               border border-sky-400/20">
+                New
+              </span>
+            )}
+
             <h4 className="skill-title">{card.title}</h4>
             <div className="skill-icons">
               {card.icons.map(({ key, el }) => (
@@ -114,11 +134,26 @@ export default function Skills() {
               ))}
             </div>
             <p className="skill-desc">{card.desc}</p>
+
+            {/* SEO tool tags */}
+            {card.seoTags && (
+              <div className="mt-3 flex flex-wrap gap-1">
+                {card.seoTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[9px] px-1.5 py-0.5 rounded-md border border-sky-400/20
+                               bg-sky-400/5 text-sky-400/70 leading-tight"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
 
-      {/* Pills
+      {/* Pills */}
       <div className="mt-16 max-w-6xl" ref={pillsRef} style={{ opacity: 0 }}>
         <h4 className="text-sm uppercase tracking-widest text-slate-400 mb-6">
           Additional Technologies
@@ -130,7 +165,8 @@ export default function Skills() {
             </span>
           ))}
         </div>
-      </div> */}
+      </div>
+
     </section>
   );
 }
