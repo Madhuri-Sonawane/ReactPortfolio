@@ -9,6 +9,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import CustomCursor from "./components/CustomCursor";
 import SocialLinks from "./components/SocialLinks";
 import GlobalBackground from "./components/GlobalBackground";
+import Certification from "./sections/Certification";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <>
               <Hero />
               <Skills />
+<Certification />
             </>
           }
         />
