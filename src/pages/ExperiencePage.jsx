@@ -41,34 +41,51 @@ const EXPERIENCES = [
     ],
   },
 
-  /* ── ADD MORE JOBS BELOW ─────────────────────────────────
   {
     id: "02",
-    title: "Frontend Intern",
-    company: "Your Company Name",
-    period: "Jun 2024 – Sep 2024",
-    type: "Internship",
-    location: "On-site",
-    current: false,
-    color: "indigo",           // sky | indigo | emerald | amber | rose
-    summary: "Short summary of what you did at this company.",
+    title: "Web Developer & SEO Specialist",
+    company: "Premium Pet House",
+    period: "Mar 2025 – Present",
+    type: "Full-time",
+    location: "Pune",
+    current: true,
+    color: "emerald",
+    summary:
+      "Redesigning and optimising the company website — combining frontend development with end-to-end SEO strategy to improve visibility, performance, and user experience.",
     contributions: [
       {
-        tag: "Feature Work",
-        headline: "What You Built",
-        body: "Describe your key responsibilities and achievements here in 2-3 sentences.",
-        stack: ["React", "CSS", "Git"],
+        tag: "Web Development",
+        headline: "Website Redesign",
+        body: "Redesigned the full company website using Bootstrap, CSS, and PHP — improving layout consistency, mobile responsiveness, and overall visual quality.",
+        stack: ["Bootstrap", "CSS3", "PHP", "HTML5"],
+      },
+      {
+        tag: "SEO Optimisation",
+        headline: "SEO Strategy & Implementation",
+        body: "Planned and executed a comprehensive SEO strategy covering keyword research, content optimisation, and search visibility improvements across the site.",
+        stack: ["SEO", "Keyword Research", "Google Analytics", "Search Console"],
+      },
+      {
+        tag: "Technical SEO",
+        headline: "Technical SEO",
+        body: "Improved site performance through technical SEO — including page speed, meta tags, structured data, sitemap, robots.txt, and crawlability fixes.",
+        stack: ["Technical SEO", "Schema Markup", "Sitemap", "Core Web Vitals"],
+      },
+      {
+        tag: "On-Page SEO",
+        headline: "On-Page SEO",
+        body: "Optimised on-page elements including title tags, meta descriptions, heading structure, internal linking, and image alt attributes across all key pages.",
+        stack: ["On-Page SEO", "Meta Tags", "Internal Linking", "Content Optimisation"],
       },
     ],
   },
-  ─────────────────────────────────────────────────────── */
 ];
 
 const METRICS = [
-  { value: "1+",   label: "Years Experience" },
-  { value: "3+",   label: "Projects Shipped"  },
+  { value: "2+",   label: "Years Experience" },
+  { value: "2",    label: "Companies"         },
   { value: "10+",  label: "Components Built"  },
-  { value: "100%", label: "Remote Ready"       },
+  { value: "4+",   label: "Skills Domains"    },
 ];
 
 const COLOR = {
