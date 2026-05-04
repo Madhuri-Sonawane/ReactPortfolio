@@ -12,7 +12,7 @@ const EXPERIENCES = [
     id: "01",
     title: "Junior React Developer",
     company: "Makedreams Technologies",
-    period: "Oct 2024 – Present",
+    period: "Oct 2024 – March 2026",
     type: "Full-time",
     location: "Remote",
     current: true,
