@@ -45,7 +45,7 @@ const EXPERIENCES = [
     id: "02",
     title: "Web Developer & SEO Specialist",
     company: "Premium Pet House",
-    period: "Mar 2025 – Present",
+    period: "Mar 2026 – Present",
     type: "Full-time",
     location: "Pune",
     current: true,
