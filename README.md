@@ -41,13 +41,6 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173
-
-```bash
-# Production build
-npm run build
-```
-
 ---
 
 ## Configuration
