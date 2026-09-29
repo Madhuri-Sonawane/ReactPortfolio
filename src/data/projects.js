@@ -101,7 +101,7 @@ export const projects = [
 
   {
     title: "Hospital Management & LIMS",
-    image: hospitalManagement,
+    image: ,
     points: [
       "Developed desktop-based Hospital Management System using React.js and Electron.js",
       "Implemented patient registration, management workflows and comprehensive billing system",
