@@ -2,6 +2,8 @@ import cineflix from "../assets/cineflix.png";
 import portfolio from "../assets/portfolio.png";
 import TestEnvironment from "../assets/TestEnvironment.png";
 import assaasdashboard from "../assets/assaasdashboard.png"
+import hospitalManagement from "../assets/hospitalManagement.png"
+
 export const projects = [
   {
     title: "AI-SAAS-DASHBOARD",
@@ -95,6 +97,21 @@ export const projects = [
         url: "https://github.com/Madhuri-Sonawane/exam-secure-environment",
       },
     ],
+  },
+
+  {
+    title: "Hospital Management & LIMS",
+    image: hospitalManagement,
+    points: [
+      "Developed desktop-based Hospital Management System using React.js and Electron.js",
+      "Implemented patient registration, management workflows and comprehensive billing system",
+      "Role-based access control and permissions for different application users",
+      "Built Laboratory Information Management System (LIMS) for pathology laboratory operations",
+      "Integrated diagnostic machines including Celltac, Agape and QuickLab",
+      "Automated workflows to receive and process laboratory test readings from connected machines",
+      "Automated laboratory report generation by converting processed test results into PDF reports",
+    ],
+    tech: ["React.js", "Electron.js", "MongoDB Atlas", "REST APIs", "PDF Generation"],
   },
 
   {
